@@ -1,6 +1,29 @@
+:root {
+    --palette1: rgb(27, 27, 30);
+    --palette2: rgb(121, 6, 26);
+    --palette3: rgb(109, 103, 110);
+    --palette4: rgb(251, 255, 254);
+    --palette5: rgb(250, 169, 22);
+
+    --themeColor: rgb(150, 3, 26);
+    --anchorColor: rgb(255, 156, 156);
+
+    scroll-behavior: smooth;
+}
+
 ::selection {
     color: white;
     background: rgb(150, 50, 50);
+}
+
+body {
+    text-align: center;
+}
+main {
+
+}
+footer {
+
 }
 
 p {
@@ -10,15 +33,16 @@ p {
 a {
     font-weight: 800;
     font-size: 20px;
-    color: rgb(227, 109, 71);
-    border: solid 1px rgb(227, 109, 71);
+    color: var(--anchorColor);
+    border: solid 1px var(--anchorColor);
     border-radius: 5px;
     padding: 2px 4px;
-    margin: 4px;
+    margin: 4px 8px;
+    text-decoration: none;
 }
 a:hover {
-    color: white;
-    background-color: rgb(227, 109, 71);
+    color: black;
+    background-color: var(--anchorColor);
 }
 
 
@@ -40,29 +64,81 @@ hr {
 
 
 table {
-    background-color: rgba(227, 109, 71, 0.3);
+    background-color: rgba(109,103, 110, 0.3);
     margin: 16px auto;
+    border-collapse: collapse;
+    width: unset;
 }
 table td {
     width: 50%;
 }
-
-.table {
-    margin: 48px;
-    border-collapse: collapse;
-    width: unset;
-}
-.table td, .table th {
+table td, table th {
     text-align: left;
     padding: 8px;
     border: 1px solid #ddd;
 }
-.table th {
+table th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: rgb(227, 109, 71);
+    background-color: rgb(109, 103, 110);
     color: white;
 }
-.table tr:nth-child(even){background-color: rgba(227, 109, 71, 0.1);}
-.table tr:hover {background-color: rgba(227, 109, 71, 0.5);}
+table tr:nth-child(even){background-color: rgba(109, 103, 110, 0.1);}
+table tr:hover {background-color: rgba(109, 103, 110, 0.5);}
+
+.colorBox {
+    color: rgb(251, 255, 254);
+    background-color: var(--themeColor);
+    padding: 32px;
+    margin: 32px 0;
+}
+
+
+
+.stripesContainer {
+    height: auto;
+    color: #4c3f2e;
+    position: relative;
+    overflow: hidden;
+    padding: 1rem;
+}
+.stripesContainer:before, .stripesContainer:after {
+    content: '';
+    background-color: rgb(121, 6, 26);
+    width: 3%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.stripesContainer:before {
+    left: 0;
+}
+.stripesContainer:after {
+    right: 0;
+}
+.stripes {
+    position: absolute;
+    left: -46px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    background: repeating-linear-gradient(
+            -55deg,
+            rgb(121, 6, 26) 1px,
+            rgb(71, 58, 58) 2px,
+            rgb(71, 58, 58) 11px,
+            rgb(121, 6, 26) 12px,
+            rgb(121, 6, 26) 20px
+    ) fixed;
+    animation: stripesAnimation linear 1s infinite;
+}
+@keyframes stripesAnimation {
+    from{
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(46px);
+    }
+}
