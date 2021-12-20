@@ -6,7 +6,7 @@
     --palette5: rgb(250, 169, 22);
 
     --themeColor: rgb(150, 3, 26);
-    --anchorColor: rgb(255, 156, 156);
+    --anchorColor: rgb(206, 0, 29);
 
     scroll-behavior: smooth;
 }
@@ -92,6 +92,12 @@ table tr:hover {background-color: rgba(109, 103, 110, 0.5);}
     background-color: var(--themeColor);
     padding: 32px;
     margin: 32px 0;
+}
+.textBox {
+    color: black;
+    background-color: white;
+    padding: 16px;
+    margin: 0 10%;
 }
 
 

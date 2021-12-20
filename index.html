@@ -59,10 +59,12 @@
         <div class="colorBox" style="margin-top: 10px;">
             <img src="images/crazyDoggo-cropped.png" alt="Dogg" style="margin: 10px;" class="spinningImage" id="spinningImage">
 
-            <h1>陳暄興</h1>
+            <div class="textBox">
+                <h1>陳暄興</h1>
 
-            <p><em><strong><a href="https://www.ntue.edu.tw/" target="_blank">國立台北教育大學</a></strong>資訊科學系</em></p>
-            <p>國立台北教育大學，資訊科學系，資二甲的一名學生</p>
+                <p><em><strong><a href="https://www.ntue.edu.tw/" target="_blank">國立台北教育大學</a></strong>資訊科學系</em></p>
+                <p>國立台北教育大學，資訊科學系，資二甲的一名學生</p>
+            </div>
         </div>
 
 
@@ -152,10 +154,8 @@
             <div class="stripes"></div>
 
             <div style="padding: 32px;" id="nav">
-                <a href="sports.html">My Sports</a>
-                <a href="contacts.html">Contacts</a>
-                <a href="listControl.html">List Control</a>
-                <a href="hover.html">Hover</a>
+                <div class="textBox" id="links">
+                </div>
             </div>
         </div>
     </footer>
@@ -179,4 +179,23 @@
         clearInterval(textBoxSpam);
         document.getElementById("memeTextbox").innerText = "";
     });
+
+
+
+    let links = [
+        "sports", "Sports",
+        "contacts", "Contracts",
+        "listControl", "List Control",
+        "hover", "Hover",
+        "borderAndBackground", "Border & Bg",
+        "mediaQuery", "Media Query"
+    ];
+    for (let i=0;i < links.length/2;i++) {
+        let a = document.createElement('a');
+        let text = document.createTextNode(links[i*2+1]);
+        a.appendChild(text);
+        a.title = links[i*2+1];
+        a.href = "subpage/" + links[i*2] + ".html";
+        document.getElementById("links").appendChild(a);
+    }
 </script>
